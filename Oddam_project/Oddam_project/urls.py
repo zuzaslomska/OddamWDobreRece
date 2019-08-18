@@ -20,7 +20,7 @@ from Oddam_app.views import LandingPage,Registration,Login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', LandingPage.as_view(), name='home'),
+    path('', LandingPage.as_view(), name='home'),
     path('register/', Registration.as_view(), name='register'),
     path('login/', Login.as_view(), name='login'),
 ]

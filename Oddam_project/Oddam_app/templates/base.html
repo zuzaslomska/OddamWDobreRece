@@ -36,6 +36,9 @@
           <li><a href="#" class="btn btn--without-border">O nas</a></li>
           <li><a href="#" class="btn btn--without-border">Fundacje i organizacje</a></li>
           <li><a href="#" class="btn btn--without-border">Kontakt</a></li>
+        {% if request.user.is_superuser %}
+          <li><a href=/administration class="btn btn--without-border">Administratorzy</a></li>
+        {% endif %}
         </ul>
       </nav>
       </nav>

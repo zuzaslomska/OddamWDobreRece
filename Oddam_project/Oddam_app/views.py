@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import (FormView, CreateView, RedirectView, View, DetailView, ListView, UpdateView, TemplateView)
 from Oddam_app.forms import RegistrationForm, LoginForm
@@ -33,5 +34,6 @@ class Login(FormView):
         return super().form_valid(form)
 
 
-class GiveawayView(TemplateView):
+class GiveawayView(LoginRequiredMixin,TemplateView):
+    login_url = reverse_lazy('login')
     template_name = 'form.html'

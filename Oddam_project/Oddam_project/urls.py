@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.urls import path
 from django.contrib import admin
-from Oddam_app.views import LandingPage,Registration,Login,GiveawayView,Administration
+from Oddam_app.views import LandingPage,Registration,Login,GiveawayView,Administration, AdminUpdate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +24,6 @@ urlpatterns = [
     path('register/', Registration.as_view(), name='register'),
     path('login/', Login.as_view(), name='login'),
     path('giveaway/', GiveawayView.as_view(), name='giveaway'),
-    path('administration/', Administration.as_view(), name='administration')
+    path('administration/', Administration.as_view(), name='administration'),
+    path('administration/edit/<pk>', AdminUpdate.as_view(), name='edit_admin'),
 ]

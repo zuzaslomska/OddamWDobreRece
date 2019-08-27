@@ -3,7 +3,7 @@
     <section class="admin-list">
         <ol>
             {% for superuser in object_list %}
-                <li>{{ superuser.first_name }} {{ superuser.last_name }}, {{ superuser.email }} <input type="button" value="Edytuj"> <input type="button" value="Usuń"> </li>
+            <li><a href={% url 'edit_admin' superuser.pk %}> {{ superuser.first_name }} {{ superuser.last_name }}, {{ superuser.email }}</a> <input type="button" value="Usuń"> </li>
             {% endfor %}
         </ol>
     </section>

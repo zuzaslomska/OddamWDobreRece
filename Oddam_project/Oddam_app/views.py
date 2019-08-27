@@ -42,3 +42,8 @@ class GiveawayView(LoginRequiredMixin,TemplateView):
 class Administration(ListView):
     template_name = 'administration.html'
     queryset = MyUser.objects.filter(is_superuser=True)
+
+class AdminUpdate(UpdateView):
+    model = MyUser
+    fields = ['first_name','last_name','email','is_superuser']
+    template_name = 'myuser_update_form.html'

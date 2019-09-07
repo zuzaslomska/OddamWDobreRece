@@ -60,3 +60,6 @@ class AdminCreate(CreateView):
     template_name = 'myuser_create_form.html'
     success_url = reverse_lazy('admin_list')
 
+class FundationsList(ListView):
+    template_name = 'fundations.html'
+    queryset = MyUser.objects.filter(is_superuser=True)

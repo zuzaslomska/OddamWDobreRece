@@ -8,3 +8,6 @@ class MyUser(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
 
+class Fundation(models.Model):
+    name = models.CharField(max_length=70, unique=False)
+    address = models.CharField(max_length=70, unique=False)

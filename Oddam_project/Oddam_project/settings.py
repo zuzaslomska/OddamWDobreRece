@@ -56,7 +56,7 @@ ROOT_URLCONF = 'Oddam_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "Oddam_app/templates/admin/Oddam_app")],
+        'DIRS': [os.path.join(BASE_DIR, "Oddam_app/templates/Oddam_app")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

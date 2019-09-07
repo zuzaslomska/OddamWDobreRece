@@ -37,13 +37,13 @@
           <li><a href="#" class="btn btn--without-border">Fundacje i organizacje</a></li>
           <li><a href="#" class="btn btn--without-border">Kontakt</a></li>
         {% if request.user.is_superuser %}
-          <li><a href=/administration class="btn btn--without-border">Administratorzy</a></li>
+          <li><a href="/admin/list" class="btn btn--without-border">Administratorzy</a></li>
         {% endif %}
         </ul>
+          {% block content %} {% endblock %}
       </nav>
       </nav>
     </header>
-{% block content %} {% endblock %}
     <footer>
         <div class="contact">
           <h2>Skontaktuj się z nami</h2>

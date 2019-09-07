@@ -4,6 +4,8 @@
         <form method="POST">
             {{ form.as_p }}
             <input type="submit" value="Zapisz">
+            <a href={% url 'delete_admin' pk=form.instance.pk  %}><input type="button" value="Usuń użytkownika">
+            <a href={% url 'create_admin' %}><input type="button" value="Utwórz nowego administartora">
             {% csrf_token %}
         </form>
     </section>

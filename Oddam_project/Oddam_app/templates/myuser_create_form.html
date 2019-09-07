@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="admin-list">
+        <form method="POST">
+            {{ form.as_p }}
+            <input type="submit" value="Stwórz administratora">
+            {% csrf_token %}
+        </form>
+    </section>
+{% endblock %}

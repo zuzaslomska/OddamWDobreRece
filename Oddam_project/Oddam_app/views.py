@@ -4,7 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import (FormView,CreateView,RedirectView,View,DetailView,ListView,UpdateView,TemplateView,DeleteView)
 from Oddam_app.forms import RegistrationForm, LoginForm
-from Oddam_app.models import MyUser
+from Oddam_app.models import MyUser, Fundation
 
 
 class LandingPage(TemplateView):
@@ -63,3 +63,9 @@ class AdminCreate(CreateView):
 class FundationsList(ListView):
     template_name = 'fundations.html'
     queryset = MyUser.objects.filter(is_superuser=True)
+
+class FundationCreate(CreateView):
+    model = Fundation
+    fields = ['name', 'address']
+    template_name = 'fundation_create_form.html'
+    success_url = reverse_lazy('fundations_list')

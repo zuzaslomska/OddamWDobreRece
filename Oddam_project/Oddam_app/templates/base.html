@@ -33,11 +33,11 @@
         <ul>
           <li><a href="#" class="btn btn--without-border active">Start</a></li>
           <li><a href={% url 'ocochodzi' %} class="btn btn--without-border">O co chodzi?</a></li>
-          <li><a href="#" class="btn btn--without-border">O nas</a></li>
-          <li><a href="/fundations/list" class="btn btn--without-border">Fundacje i organizacje</a></li>
+          <li><a href={% url 'onas' %} class="btn btn--without-border">O nas</a></li>
+          <li><a href={% url 'fundations_list' %} class="btn btn--without-border">Fundacje i organizacje</a></li>
           <li><a href="#" class="btn btn--without-border">Kontakt</a></li>
         {% if request.user.is_superuser %}
-          <li><a href="/admin/list" class="btn btn--without-border">Administratorzy</a></li>
+          <li><a href={% url 'admin_list' %} class="btn btn--without-border">Administratorzy</a></li>
         {% endif %}
         </ul>
           {% block content %} {% endblock %}

@@ -17,7 +17,7 @@ from django.conf.urls import url
 from django.urls import path
 from django.contrib import admin
 from Oddam_app.views import LandingPage,Registration,Login,GiveawayView,AdminList, AdminUpdate, AdminDelete, AdminCreate, \
-    FundationsList, FundationCreate, FundationUpdate, FundationDelete
+    FundationsList, FundationCreate, FundationUpdate, FundationDelete, WhatThisIsAllAbout
 
 
 urlpatterns = [
@@ -34,6 +34,7 @@ urlpatterns = [
     path('fundations/create', FundationCreate.as_view(), name='create_fundation'),
     path('fundations/update/<pk>/', FundationUpdate.as_view(), name='update_fundation'),
     path('fundations/delete/<pk>/', FundationDelete.as_view(), name='delete_fundation'),
+    path('ocochodzi', WhatThisIsAllAbout.as_view(), name='ocochodzi'),
 
 
 ]

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="admin-list">
+        <ol>
+            {% for fundation in object_list %}
+            <li><a href={% url 'update_fundation' fundation.pk %}> {{ fundation.name }} {{ fundation.address }}</a></li>
+            {% endfor %}
+            <a href={% url 'create_fundation' %}><input type="button" value="Dodaj nową organizację lub fundację">
+        </ol>
+    </section>
+{% endblock %}

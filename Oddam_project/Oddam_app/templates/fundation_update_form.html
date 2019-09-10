@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="admin-list">
+        <form method="POST">
+            {{ form.as_p }}
+            <input type="submit" value="Zapisz">
+            <a href={% url 'delete_fundation' pk=form.instance.pk  %}><input type="button" value="Usuń fundację">
+            {% csrf_token %}
+        </form>
+    </section>
+{% endblock %}

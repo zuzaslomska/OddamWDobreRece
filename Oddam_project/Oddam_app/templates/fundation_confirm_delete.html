@@ -2,7 +2,7 @@
 {% block content %}
 <section class="admin-list">
     <form method="POST">
-        <p>Jesteś pewny, że chcesz usunąć "{{ object }}"?</p>
+        <p>Jesteś pewny, że chcesz usunąć użytkownika"{{ object }}"?</p>
         <input type="submit" value="Tak">
         {% csrf_token %}
     </form>

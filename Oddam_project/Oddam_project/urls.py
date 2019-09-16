@@ -14,8 +14,27 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+from django.urls import path
 from django.contrib import admin
+from Oddam_app.views import LandingPage,Registration,Login,GiveawayView,AdminList, AdminUpdate, AdminDelete, AdminCreate, \
+    FundationsList, FundationCreate, FundationUpdate, FundationDelete, WhatThisIsAllAbout, AboutUs
+
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
+    path('', LandingPage.as_view(), name='home'),
+    path('register/', Registration.as_view(), name='register'),
+    path('login/', Login.as_view(), name='login'),
+    path('giveaway/', GiveawayView.as_view(), name='giveaway'),
+    path('admin/list', AdminList.as_view(), name='admin_list'),
+    path('admin/update/<pk>/', AdminUpdate.as_view(), name='update_admin'),
+    path('admin/delete/<pk>', AdminDelete.as_view(), name='delete_admin'),
+    path('admin/create', AdminCreate.as_view(), name='create_admin'),
+    path('fundations/list', FundationsList.as_view(), name='fundations_list'),
+    path('fundations/create', FundationCreate.as_view(), name='create_fundation'),
+    path('fundations/update/<pk>/', FundationUpdate.as_view(), name='update_fundation'),
+    path('fundations/delete/<pk>/', FundationDelete.as_view(), name='delete_fundation'),
+    path('ocochodzi', WhatThisIsAllAbout.as_view(), name='ocochodzi'),
+    path('onas', AboutUs.as_view(), name='onas'),
+
 ]

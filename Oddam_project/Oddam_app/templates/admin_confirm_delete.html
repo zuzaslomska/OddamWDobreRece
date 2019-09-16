@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="admin-list">
+    <form method="POST">
+        <p>Jesteś pewny, że chcesz usunąć "{{ object }}"?</p>
+        <input type="submit" value="Tak">
+        {% csrf_token %}
+    </form>
+</section>
+{% endblock %}

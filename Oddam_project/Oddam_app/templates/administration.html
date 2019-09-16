@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="admin-list">
+        <ol>
+            {% for superuser in object_list %}
+            <li><a href={% url 'update_admin' superuser.pk %}> {{ superuser.first_name }} {{ superuser.last_name }}, {{ superuser.email }}</a></li>
+            {% endfor %}
+        </ol>
+    </section>
+{% endblock %}

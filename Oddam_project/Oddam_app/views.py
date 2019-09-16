@@ -89,3 +89,10 @@ class FundationDelete(DeleteView):
     model = Fundation
     template_name = 'fundation_confirm_delete.html'
     success_url = reverse_lazy('fundations_list')
+
+
+class WhatThisIsAllAbout(TemplateView):
+    template_name = 'what_this_is_all_about.html'
+
+class AboutUs(TemplateView):
+    template_name = 'about_us.html'
